@@ -1,0 +1,11 @@
+@import "../../resources/styles/base";
+
+.sorters-bar {
+    &__item {
+        margin-bottom: 2rem;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}

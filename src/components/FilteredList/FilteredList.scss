@@ -1,0 +1,21 @@
+@import "../../resources/styles/base";
+
+.filtered-list {
+    display: flex;
+    width: 100%;
+
+    &__filters {
+        flex-basis: 232px;
+        flex-grow: 0;
+        flex-shrink: 0;
+        margin-right: 2rem;
+    }
+
+    &__content {
+        flex-grow: 1;
+    }
+
+    &__sorters {
+        margin-bottom: 2rem;
+    }
+}
