@@ -1,11 +1,12 @@
 @import "../../resources/styles/base";
 
 .filters-bar {
+    --offset: 2rem;
+
     &__item {
-        margin-bottom: 2rem;
     }
 
-    &:last-child {
-        margin-bottom: 0;
+    &__item + &__item {
+        margin-top: var(--offset);
     }
 }

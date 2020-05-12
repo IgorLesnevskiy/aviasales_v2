@@ -4,7 +4,8 @@ import FiltersBar from "../FiltersBar";
 
 import "./FilteredList.scss";
 import SortersBar from "../SortersBar";
-import TicketsList from "../TicketsList";
+
+import TicketsListContainer from "../../redux/containers/TicketsListContainer";
 
 const FilteredList = () => {
     return (
@@ -18,7 +19,7 @@ const FilteredList = () => {
                         <SortersBar />
                     </div>
                     <div className={"filtered-list__items"}>
-                        <TicketsList />
+                        <TicketsListContainer />
                     </div>
                 </div>
             </div>

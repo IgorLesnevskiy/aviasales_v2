@@ -1,20 +1,15 @@
 import React from "react";
 
 import "./SortersBar.scss";
-import SorterPanel from "../SorterPanel";
+
+import CheckersBar from "../ChekersBar/ChekersBar";
 
 const SortersBar = () => {
     return (
         <div className={"sorters-bar"}>
-            {Array(3)
-                .fill()
-                .map(() => {
-                    return (
-                        <div className={"sorters-bar__item"}>
-                            <SorterPanel />
-                        </div>
-                    );
-                })}
+            <div className={"sorters-bar__item"}>
+                <CheckersBar />
+            </div>
         </div>
     );
 };

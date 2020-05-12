@@ -8,9 +8,9 @@ const FiltersBar = () => {
         <div className={"filters-bar"}>
             {Array(3)
                 .fill()
-                .map(() => {
+                .map((_, key) => {
                     return (
-                        <div className={"filters-bar__item"}>
+                        <div className={"filters-bar__item"} key={key}>
                             <FilterPanel />
                         </div>
                     );

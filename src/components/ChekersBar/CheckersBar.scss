@@ -1,0 +1,58 @@
+@import "../../resources/styles/base";
+
+.checkers-bar {
+    $block-name: &;
+    $child-block-name: checkers-bar-item;
+    --item-border-radius: 5px;
+
+    display: flex;
+
+    &__item {
+        flex-grow: 1;
+    }
+
+    &__item:not(:last-child) {
+        margin-right: -1px;
+    }
+
+    &__item:last-child .#{$child-block-name}__content {
+        border-top-right-radius: var(--item-border-radius);
+        border-bottom-right-radius: var(--item-border-radius);
+    }
+
+    &__item:first-child .#{$child-block-name}__content {
+        border-top-left-radius: var(--item-border-radius);
+        border-bottom-left-radius: var(--item-border-radius);
+    }
+}
+
+.checkers-bar-item {
+    $block-name: &;
+    display: block;
+    cursor: pointer;
+
+    &__input {
+        display: none;
+    }
+
+    &__content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 5rem;
+        font-size: 1.2rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        transition: all var(--animation-speed) var(--animation-type, linear);
+        color: var(--primary-text-color);
+        border: 1px solid var(--color-gray3);
+        background: #fff;
+        overflow: hidden;
+    }
+
+    &__input:checked + &__content {
+        background: var(--primary-color);
+        border-color: var(--primary-color);
+        color: #fff;
+    }
+}

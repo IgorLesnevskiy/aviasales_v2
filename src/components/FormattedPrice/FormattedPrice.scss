@@ -1,0 +1,23 @@
+.formatted-price {
+    &:after {
+        font-weight: 400;
+    }
+
+    &[data-type="RUB"] {
+        &:after {
+            content: " ₽";
+        }
+    }
+
+    &[data-type="EUR"] {
+        &:before {
+            content: "€";
+        }
+    }
+
+    &[data-type="USD"] {
+        &:before {
+            content: "$";
+        }
+    }
+}
