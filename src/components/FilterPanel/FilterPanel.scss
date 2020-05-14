@@ -1,5 +1,40 @@
 @import "../../resources/styles/base";
 
-.filter-panel {
+.filter-panel-wrapper {
     @include styled-panel();
+
+    &__title {
+        font-weight: 600;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+    }
+
+    &__content {
+        .filter-panel-checkboxes-list {
+            margin-bottom: -1rem;
+        }
+    }
+}
+
+.filter-panel-checkboxes-list {
+    --hover-color: var(--tertiary-color);
+    --animation-settings: all var(--animation-type) var(--animation-speed);
+
+    &__row {
+        margin-left: -2rem;
+        margin-right: -2rem;
+        transition: var(--animation-settings);
+
+        .checkbox {
+            padding: 1rem 2rem;
+        }
+
+        &:hover {
+            background: var(--hover-color);
+        }
+    }
+
+    &__row + &__row {
+    }
 }

@@ -1,0 +1,81 @@
+@import "../../resources/styles/base";
+
+.checkbox {
+    $block-name: &;
+    --animation-settings: all var(--animation-speed) var(--animation-type);
+    --default-color: var(--color-gray4);
+    --disabled-color: var(--color-gray3);
+    --checked-color: var(--primary-color);
+
+    display: flex;
+    align-items: center;
+    font-size: 1.3rem;
+    cursor: pointer;
+
+    &__input {
+        display: none;
+    }
+
+    &__box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        color: var(--default-color);
+        transition: var(--animation-settings);
+
+        width: 1.54em;
+        height: 1.54em;
+        border: 1px solid currentColor;
+        border-radius: 0.2em;
+    }
+
+    &__box-tick {
+        opacity: 0;
+        transition: var(--animation-settings);
+        color: currentColor;
+        font-size: 0.8em;
+    }
+
+    &__label {
+        margin-left: 1rem;
+        font-size: 1em;
+    }
+
+    &__input:checked {
+        & + #{$block-name}__box {
+            color: var(--checked-color);
+
+            #{$block-name}__box-tick {
+                opacity: 1;
+            }
+        }
+    }
+
+    &__input:disabled {
+        & + #{$block-name}__box {
+            color: var(--disabled-color);
+
+            &:after {
+                content: "";
+                background: var(--disabled-color);
+                position: absolute;
+                opacity: 0.3;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        & ~ #{$block-name}__label {
+            color: var(--disabled-color);
+        }
+    }
+
+    &:hover {
+        #{$block-name}__box {
+            color: var(--checked-color);
+        }
+    }
+}

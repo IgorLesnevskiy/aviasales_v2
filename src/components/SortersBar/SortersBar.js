@@ -2,7 +2,7 @@ import React from "react";
 
 import "./SortersBar.scss";
 
-import CheckersBar from "../ChekersBar/ChekersBar";
+import CheckersBar from "../ChekersBar";
 
 const SortersBar = () => {
     return (

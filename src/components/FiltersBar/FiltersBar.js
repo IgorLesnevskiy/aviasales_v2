@@ -1,7 +1,7 @@
 import React from "react";
 
 import "./FiltersBar.scss";
-import FilterPanel from "../FilterPanel";
+import FilterPanel, { FilterPanelCheckboxesList } from "../FilterPanel";
 
 const FiltersBar = () => {
     return (
@@ -11,7 +11,9 @@ const FiltersBar = () => {
                 .map((_, key) => {
                     return (
                         <div className={"filters-bar__item"} key={key}>
-                            <FilterPanel />
+                            <FilterPanel title={"Количество пересадок"}>
+                                <FilterPanelCheckboxesList />
+                            </FilterPanel>
                         </div>
                     );
                 })}
